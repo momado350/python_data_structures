@@ -32,4 +32,37 @@ The method should be called .set_link_node() and should take link_node as an arg
 
   def set_link_node(self, link_node):
      self.link_node = link_node
-     
+
+#instantiate three nodes. None have an argument for link_node
+yacko = Node("likes to yak")
+wacko = Node("has a penchant for hoarding snacks")
+dot = Node("enjoys spending time in movie lots")
+
+"""
+Now let’s give these nodes some responsibilities! yacko can keep track of dot and dot can keep up with wacko. wacko can’t keep track of anything though.
+
+Below the newly created nodes, use your .set_link_node() method to give:
+
+yacko a link_node of dot
+dot a link_node of wacko
+"""
+
+dot.set_link_node(wacko)
+yacko.set_link_node(dot)
+
+"""
+Create two new variables, dots_data, and wackos_data. Use both getter methods to get dot‘s value from yacko and get wacko‘s value from dot. Print dots_data and wackos_data to the console to see the results!
+
+When your code is passing, take a moment to consider:
+
+How would you get yacko‘s value?
+How could you get from yacko to wacko‘s value?
+How do you think nodes could be helpful for keeping track of and storing information?
+"""
+
+dots_data = yacko.get_link_node().get_value()
+wackos_data = dot.get_link_node().get_value()
+
+print(dots_data)
+print(wackos_data)
+
